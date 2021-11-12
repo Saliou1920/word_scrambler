@@ -1,0 +1,15 @@
+.scrambled,
+.instruction {
+  font-weight: bold;
+  text-align: center;
+}
+
+.scrambled {
+  font-size: 2.5em;
+  color: #113cfc;
+}
+
+.instruction {
+  font-size: 1.5em;
+  margin-top: 2em;
+}
