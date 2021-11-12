@@ -1,0 +1,10 @@
+.container {
+  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: salmon;
+  padding: 50px 60px;
+  border-radius: 25px;
+}
