@@ -1,12 +1,12 @@
 import React from "react";
-import { scrumbler } from "../../helpers/scrumbler";
+import { scrambler } from "../../helpers/scrambler";
 import "./Sentence.css";
 export default function Sentence({ sentence }) {
   return (
     <div className="container">
       <div className="scrambled">
         {sentence.split(" ").map((word, index) => (
-          <span key={index}> {scrumbler(word)} </span>
+          <span key={index}> {scrambler(word)} </span>
         ))}
       </div>
       <div className="instruction">

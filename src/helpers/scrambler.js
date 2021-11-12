@@ -4,7 +4,7 @@ function swap(arr, i, j) {
   arr[j] = tmp;
 }
 
-export function scrumbler(word) {
+export function scrambler(word) {
   var arr = word.split(""),
     n = arr.length;
 
