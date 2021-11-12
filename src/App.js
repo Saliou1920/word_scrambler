@@ -10,14 +10,17 @@ function App() {
   function Scrumbler(b) {
     var a = b.split(""),
       n = a.length;
-
-    for (var i = n - 2; i > 1; i--) {
-      var j = Math.floor(Math.random() * i) + 1;
-      var tmp = a[i];
-      a[i] = a[j];
-      a[j] = tmp;
+    if (n <= 3) return b;
+    if (n === 4) return a[0] + a[2] + a[1] + a[3];
+    if (n > 4) {
+      for (var i = n - 2; i > 1; i--) {
+        var j = Math.floor(Math.random() * i) + 1;
+        var tmp = a[i];
+        a[i] = a[j];
+        a[j] = tmp;
+      }
+      return a.join("");
     }
-    return a.join("");
   }
 
   return (
@@ -26,7 +29,7 @@ function App() {
       <button onClick={() => setCounter(counter + 1)}>Fetch sentence</button>
 
       {sentence.split(" ").map((word, index) => (
-        <p key={index}> {Scrumbler(word)} </p>
+        <span key={index}> {Scrumbler(word)} </span>
       ))}
     </div>
   );
