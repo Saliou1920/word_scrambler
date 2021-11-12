@@ -1,7 +1,7 @@
 import "./App.css";
 import useFetchSentence from "./utils/useFetchSentence";
 import { useState } from "react";
-import Sentence from "./components/Sentence/Sentence.js";
+import Home from "./components/Home/Home";
 
 function App() {
   const [counter, setCounter] = useState(1);
@@ -11,9 +11,7 @@ function App() {
   if (error) return <div className="error">Unable to fetch API</div>;
   return (
     <div className="App">
-      {/* <p>{sentence}</p>
-      <button onClick={() => setCounter(counter + 1)}>Fetch sentence</button> */}
-      <Sentence sentence={sentence} />
+      <Home sentence={sentence} />
     </div>
   );
 }
