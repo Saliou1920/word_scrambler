@@ -13,7 +13,6 @@ function App() {
 
     for (var i = n - 2; i > 1; i--) {
       var j = Math.floor(Math.random() * i) + 1;
-      console.log(j);
       var tmp = a[i];
       a[i] = a[j];
       a[j] = tmp;
