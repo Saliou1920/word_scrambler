@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { scrambler } from "../../helpers/scrambler";
 import "./Sentence.css";
 
@@ -14,6 +14,7 @@ const Sentence = React.memo(({ sentence }) => {
         <p>Guess the sentence ! Starting typing</p>
         <p>The yellow blocks are meant for spaces</p>
       </div>
+      {console.log("render")}
     </div>
   );
 });
