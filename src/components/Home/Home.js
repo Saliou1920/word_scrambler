@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import useKeyPress from "../../utils/useKeyPress";
-import SentenceMemo from "../Sentence/Sentence";
+import Sentence from "../Sentence/Sentence";
 import "./Home.css";
 export default function Home({ sentence }) {
   const [keydown, setKeydown] = useState();
@@ -11,7 +11,7 @@ export default function Home({ sentence }) {
   });
   return (
     <div className="container">
-      <SentenceMemo sentence={sentence} />
+      <Sentence sentence={sentence} />
       <span className="keyboard">{keydown}</span>
     </div>
   );

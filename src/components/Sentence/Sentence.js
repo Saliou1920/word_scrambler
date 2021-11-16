@@ -17,5 +17,3 @@ export default function Sentence({ sentence }) {
     </div>
   );
 }
-
-export const SentenceMemo = React.memo(Sentence, []);
