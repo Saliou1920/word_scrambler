@@ -16,5 +16,3 @@ export default function Home({ sentence }) {
     </div>
   );
 }
-
-export const MemoHome = React.memo(Home);

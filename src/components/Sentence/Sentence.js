@@ -1,7 +1,8 @@
 import React from "react";
 import { scrambler } from "../../helpers/scrambler";
 import "./Sentence.css";
-export default function Sentence({ sentence }) {
+
+const Sentence = React.memo(({ sentence }) => {
   return (
     <div className="container">
       <div className="scrambled">
@@ -13,7 +14,8 @@ export default function Sentence({ sentence }) {
         <p>Guess the sentence ! Starting typing</p>
         <p>The yellow blocks are meant for spaces</p>
       </div>
-      {console.log("render")}
     </div>
   );
-}
+});
+
+export default Sentence;
