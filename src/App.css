@@ -6,16 +6,3 @@
   justify-content: center;
   background-color: #ffedda;
 }
-
-.texte {
-  /* display: flex; */
-  max-width: 600px;
-}
-
-.texte-1 {
-  display: flex;
-}
-
-.texte-1 input {
-  width: 100%;
-}
