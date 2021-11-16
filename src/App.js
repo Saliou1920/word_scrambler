@@ -8,7 +8,9 @@ function App() {
   const [counter, setCounter] = useState(1);
   const [sentence, loading, error] = useFetchSentence(counter);
   const [keydown, setKeydown] = useState();
+  const [test, setTest] = useState("je m'appelle saliou diop");
 
+  console.log(test.split(""));
   useKeyPress((key) => {
     console.log(key);
     setKeydown(key);
@@ -19,7 +21,6 @@ function App() {
   return (
     <div className="App">
       <Home sentence={sentence} />
-      <span>{keydown}</span>
     </div>
   );
 }

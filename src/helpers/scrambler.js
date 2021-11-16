@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 function swap(arr, i, j) {
   var tmp = arr[i];
   arr[i] = arr[j];
