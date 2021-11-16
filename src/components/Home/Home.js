@@ -3,12 +3,16 @@ import React, { useState } from "react";
 import Sentence from "../Sentence/Sentence";
 import "./Home.css";
 const Home = React.memo(({ sentence }) => {
-  const [keydown, setKeydown] = useState();
-  //   const [sentenceIndex, setSentenceIndex] = useState(0);
   const [sentenceArray, setSentenceArray] = useState(sentence.split(" "));
 
+  function onNextSibling(e) {
+    const { target } = e;
+    const { nextSibling } = target;
+    if (nextSibling) {
+      nextSibling.focus();
+    }
+  }
   function Texte() {
-    const [isCorresct, setIsCorrect] = useState(false);
     return (
       <div className="texte">
         {sentence.split(" ").map((word, wIndex) => {
@@ -20,17 +24,11 @@ const Home = React.memo(({ sentence }) => {
                     type="text"
                     maxLength="1"
                     key={lIndex}
-                    className={isCorresct ? "correct" : ""}
+                    className=""
                     onChange={(e) => {
-                      if (e.target.nextSibling) {
-                        e.target.nextSibling.focus();
-                      }
+                      onNextSibling(e);
                       if (e.target.value === letter) {
-                        console.log("VRAI");
-                        setIsCorrect(true);
-                      } else {
-                        console.log("FAUX");
-                        setIsCorrect(false);
+                        e.target.className = "correct";
                       }
                     }}
                   />
@@ -43,12 +41,11 @@ const Home = React.memo(({ sentence }) => {
                   maxLength="1"
                   className="espace"
                   onChange={(e) => {
-                    if (e.target.nextSibling) {
-                      e.target.nextSibling.focus();
-                    }
+                    onNextSibling(e);
+
                     if (e.target.value === " ") {
                       console.log("VRAI");
-                      setIsCorrect(true);
+                      e.target.className = "correct";
                     }
                   }}
                 />
