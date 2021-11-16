@@ -13,6 +13,8 @@ const Home = React.memo(({ sentence }) => {
     }
   }
   function Texte() {
+    const [reponse, setReponse] = useState("");
+
     return (
       <div className="texte">
         {sentence.split(" ").map((word, wIndex) => {
@@ -29,6 +31,10 @@ const Home = React.memo(({ sentence }) => {
                       onNextSibling(e);
                       if (e.target.value === letter) {
                         e.target.className = "correct";
+                        setReponse(reponse + letter);
+                        console.log(reponse);
+                      } else {
+                        e.target.className = "incorrect";
                       }
                     }}
                   />
@@ -46,6 +52,7 @@ const Home = React.memo(({ sentence }) => {
                     if (e.target.value === " ") {
                       console.log("VRAI");
                       e.target.className = "correct";
+                      setReponse(reponse + " ");
                     }
                   }}
                 />
