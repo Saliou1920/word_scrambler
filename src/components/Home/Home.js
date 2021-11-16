@@ -1,31 +1,57 @@
 import React, { useState } from "react";
-import useKeyPress from "../../utils/useKeyPress";
+// import useKeyPress from "../../utils/useKeyPress";
 import Sentence from "../Sentence/Sentence";
 import "./Home.css";
-export default function Home({ sentence }) {
+const Home = React.memo(({ sentence }) => {
   const [keydown, setKeydown] = useState();
-  const [sentenceIndex, setSentenceIndex] = useState(0);
+  //   const [sentenceIndex, setSentenceIndex] = useState(0);
   const [sentenceArray, setSentenceArray] = useState(sentence.split(" "));
 
   function Texte() {
+    const [isCorresct, setIsCorrect] = useState(false);
     return (
       <div className="texte">
         {sentence.split(" ").map((word, wIndex) => {
           return (
-            <div className="texte-1">
+            <div className={"texte-1"}>
               {word.split("").map((letter, lIndex) => {
                 return (
                   <input
                     type="text"
-                    value={wIndex}
-                    maxLength="2"
+                    maxLength="1"
                     key={lIndex}
+                    className={isCorresct ? "correct" : ""}
+                    onChange={(e) => {
+                      if (e.target.nextSibling) {
+                        e.target.nextSibling.focus();
+                      }
+                      if (e.target.value === letter) {
+                        console.log("VRAI");
+                        setIsCorrect(true);
+                      } else {
+                        console.log("FAUX");
+                        setIsCorrect(false);
+                      }
+                    }}
                   />
                 );
               })}
-              {/* Saliou */}
+              {/* check if it is the last word */}
               {word !== sentenceArray[sentenceArray.length - 1] && (
-                <input type="text" value="S" maxLength="2" className="espace" />
+                <input
+                  type="text"
+                  maxLength="1"
+                  className="espace"
+                  onChange={(e) => {
+                    if (e.target.nextSibling) {
+                      e.target.nextSibling.focus();
+                    }
+                    if (e.target.value === " ") {
+                      console.log("VRAI");
+                      setIsCorrect(true);
+                    }
+                  }}
+                />
               )}
             </div>
           );
@@ -34,18 +60,18 @@ export default function Home({ sentence }) {
     );
   }
 
-  useKeyPress((key) => {
-    console.log(key);
-    setKeydown(key);
-  });
+  //   const keypress = useKeyPress((key) => {
+  //     setKeydown(key);
+  //   });
   return (
     <div className="container">
       <Sentence sentence={sentence} />
-      <span className="keyboard">{keydown}</span>
+      {/* <span className="keyboard">{keydown}</span> */}
       <div>
         <Texte />
       </div>
-      {console.log("here:", sentence)}
     </div>
   );
-}
+});
+
+export default Home;

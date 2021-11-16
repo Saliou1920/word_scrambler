@@ -14,7 +14,6 @@ const Sentence = React.memo(({ sentence }) => {
         <p>Guess the sentence ! Starting typing</p>
         <p>The yellow blocks are meant for spaces</p>
       </div>
-      {console.log("render")}
     </div>
   );
 });
