@@ -59,7 +59,8 @@ const Guessing = React.memo(({ sentence }) => {
           </div>
         );
       })}
-      {console.log(reponse)}
+      {console.log(sentence.length)}
+      {reponse === sentence.length && <button className="btn">Next</button>}
     </div>
   );
 });

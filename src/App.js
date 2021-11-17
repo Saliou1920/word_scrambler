@@ -21,7 +21,6 @@ function App() {
   return (
     <div className="App">
       <Home sentence={sentence} />
-      <button onClick={() => setTest2(test2 + 1)}>Next</button>
     </div>
   );
 }
