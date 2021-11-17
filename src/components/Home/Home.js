@@ -1,78 +1,15 @@
 import React, { useState } from "react";
-// import useKeyPress from "../../utils/useKeyPress";
 import Sentence from "../Sentence/Sentence";
+import Guessing from "../Guessing/Guessing";
+
 import "./Home.css";
+
 const Home = React.memo(({ sentence }) => {
-  const [sentenceArray, setSentenceArray] = useState(sentence.split(" "));
-
-  function onNextSibling(e) {
-    const { target } = e;
-    const { nextSibling } = target;
-    if (nextSibling) {
-      nextSibling.focus();
-    }
-  }
-  function Texte() {
-    const [reponse, setReponse] = useState("");
-
-    return (
-      <div className="texte">
-        {sentence.split(" ").map((word, wIndex) => {
-          return (
-            <div className={"texte-1"}>
-              {word.split("").map((letter, lIndex) => {
-                return (
-                  <input
-                    type="text"
-                    maxLength="1"
-                    key={lIndex}
-                    className=""
-                    onChange={(e) => {
-                      onNextSibling(e);
-                      if (e.target.value === letter) {
-                        e.target.className = "correct";
-                        setReponse(reponse + letter);
-                        console.log(reponse);
-                      } else {
-                        e.target.className = "incorrect";
-                      }
-                    }}
-                  />
-                );
-              })}
-              {/* check if it is the last word */}
-              {word !== sentenceArray[sentenceArray.length - 1] && (
-                <input
-                  type="text"
-                  maxLength="1"
-                  className="espace"
-                  onChange={(e) => {
-                    onNextSibling(e);
-
-                    if (e.target.value === " ") {
-                      console.log("VRAI");
-                      e.target.className = "correct";
-                      setReponse(reponse + " ");
-                    }
-                  }}
-                />
-              )}
-            </div>
-          );
-        })}
-      </div>
-    );
-  }
-
-  //   const keypress = useKeyPress((key) => {
-  //     setKeydown(key);
-  //   });
   return (
     <div className="container">
       <Sentence sentence={sentence} />
-      {/* <span className="keyboard">{keydown}</span> */}
       <div>
-        <Texte />
+        <Guessing sentence={sentence} />
       </div>
     </div>
   );

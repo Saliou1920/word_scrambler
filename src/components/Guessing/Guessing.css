@@ -1,0 +1,27 @@
+.guessing {
+  max-width: 700px;
+}
+
+.guessing-word {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.guessing-word input {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  background-color: #ffedda;
+  font-size: 1em;
+}
+
+.espace {
+  background-color: #ffb830 !important;
+}
+
+.correct {
+  background-color: #00ff00 !important;
+}
