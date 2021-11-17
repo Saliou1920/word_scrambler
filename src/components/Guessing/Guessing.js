@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Guessing.css";
 
 const Guessing = React.memo(({ sentence }) => {
-  const [sentenceArray, setSentenceArray] = useState(sentence.split(" "));
+  const [sentenceArray, setSentenceArray] = useState(sentence?.split(" "));
   const [reponse, setReponse] = useState(0);
 
   function onNextSibling(e) {
@@ -15,7 +15,7 @@ const Guessing = React.memo(({ sentence }) => {
 
   return (
     <div className="guessing">
-      {sentence.split(" ").map((word, wIndex) => {
+      {sentence?.split(" ").map((word, wIndex) => {
         return (
           <div className={"guessing-word"}>
             {word.split("").map((letter, lIndex) => {
@@ -59,8 +59,7 @@ const Guessing = React.memo(({ sentence }) => {
           </div>
         );
       })}
-      {console.log(sentence.length)}
-      {reponse === sentence.length && <button className="btn">Next</button>}
+      {reponse === sentence?.length && <button className="btn">Next</button>}
     </div>
   );
 });

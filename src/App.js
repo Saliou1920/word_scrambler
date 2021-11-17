@@ -2,7 +2,6 @@ import "./App.css";
 import useFetchSentence from "./utils/useFetchSentence";
 import { useState } from "react";
 import Home from "./components/Home/Home";
-import useKeyPress from "./utils/useKeyPress";
 
 function App() {
   const [counter, setCounter] = useState(1);

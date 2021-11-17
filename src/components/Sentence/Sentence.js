@@ -6,7 +6,7 @@ const Sentence = React.memo(({ sentence }) => {
   return (
     <div className="container">
       <div className="scrambled">
-        {sentence.split(" ").map((word, index) => (
+        {sentence?.split(" ").map((word, index) => (
           <span key={index}> {scrambler(word)} </span>
         ))}
       </div>
