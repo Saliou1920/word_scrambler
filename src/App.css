@@ -1,5 +1,6 @@
 .App,
-.error {
+.error,
+.loading {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
