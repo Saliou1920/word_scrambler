@@ -8,14 +8,13 @@ const Home = React.memo(({ sentence, counter, setCounter, setWin }) => {
   return (
     <div className="container">
       <Sentence sentence={sentence} />
-      <div>
-        <Guessing
-          sentence={sentence}
-          counter={counter}
-          setCounter={setCounter}
-          setWin={setWin}
-        />
-      </div>
+      <h1>Score: {counter - 1}</h1>
+      <Guessing
+        sentence={sentence}
+        counter={counter}
+        setCounter={setCounter}
+        setWin={setWin}
+      />
     </div>
   );
 });
