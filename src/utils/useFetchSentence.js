@@ -20,6 +20,7 @@ export default function useFetchSentence(counter) {
       .catch((error) => {
         setError(true);
         setLoading(false);
+        console.log(error);
       });
   }, [counter]);
 

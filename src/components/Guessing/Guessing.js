@@ -62,7 +62,7 @@ const Guessing = React.memo(({ sentence, counter, setCounter }) => {
         <button
           className="btn"
           onClick={() => {
-            if (counter < 10) {
+            if (counter <= 10) {
               setCounter(counter + 1);
               setReponse(0);
             }
