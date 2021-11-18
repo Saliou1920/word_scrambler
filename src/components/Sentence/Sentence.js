@@ -4,7 +4,7 @@ import "./Sentence.css";
 
 const Sentence = React.memo(({ sentence }) => {
   return (
-    <div className="container">
+    <div>
       <div className="scrambled">
         {sentence?.split(" ").map((word, index) => (
           <span key={index}> {scrambler(word)} </span>
