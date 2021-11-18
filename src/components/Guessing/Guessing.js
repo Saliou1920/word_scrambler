@@ -47,7 +47,6 @@ const Guessing = React.memo(({ sentence }) => {
                   onNextSibling(e);
 
                   if (e.target.value === " ") {
-                    console.log("VRAI");
                     e.target.className = "correct";
                     setReponse(reponse + 1);
                   } else {
