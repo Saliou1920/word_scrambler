@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Guessing.css";
 
-const Guessing = React.memo(({ sentence }) => {
+const Guessing = React.memo(({ sentence, counter, setCounter }) => {
   const [sentenceArray, setSentenceArray] = useState(sentence?.split(" "));
   const [reponse, setReponse] = useState(0);
 
@@ -58,7 +58,17 @@ const Guessing = React.memo(({ sentence }) => {
           </div>
         );
       })}
-      {reponse === sentence?.length && <button className="btn">Next</button>}
+      {reponse === sentence?.length && (
+        <button
+          className="btn"
+          onClick={() => {
+            setCounter(counter + 1);
+            setReponse(0);
+          }}
+        >
+          Next
+        </button>
+      )}
     </div>
   );
 });

@@ -6,3 +6,9 @@
   justify-content: center;
   background-color: #ffedda;
 }
+
+.error {
+  color: red;
+  display: flex;
+  justify-content: center;
+}
