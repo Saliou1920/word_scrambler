@@ -1,4 +1,5 @@
-.App {
+.App,
+.error {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -9,6 +10,4 @@
 
 .error {
   color: red;
-  display: flex;
-  justify-content: center;
 }

@@ -4,7 +4,7 @@ import Guessing from "../Guessing/Guessing";
 
 import "./Home.css";
 
-const Home = React.memo(({ sentence, counter, setCounter }) => {
+const Home = React.memo(({ sentence, counter, setCounter, setWin }) => {
   return (
     <div className="container">
       <Sentence sentence={sentence} />
@@ -13,6 +13,7 @@ const Home = React.memo(({ sentence, counter, setCounter }) => {
           sentence={sentence}
           counter={counter}
           setCounter={setCounter}
+          setWin={setWin}
         />
       </div>
     </div>
