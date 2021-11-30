@@ -5,7 +5,7 @@ import Home from "./components/Home/Home";
 import Win from "./components/win/Win";
 
 function App() {
-  const [counter, setCounter] = useState(9);
+  const [counter, setCounter] = useState(1);
 
   const [sentence, loading, error] = useFetchSentence(counter);
 
