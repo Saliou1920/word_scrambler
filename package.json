@@ -38,6 +38,6 @@
   },
   "devDependencies": {
     "@testing-library/react-hooks": "^7.0.2",
-    "jest": "^27.3.1"
+    "jest": "26.6.0"
   }
 }
